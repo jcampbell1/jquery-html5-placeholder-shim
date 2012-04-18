@@ -51,7 +51,7 @@
           .css($.extend({
             position:'absolute',
             display: 'inline',
-            float:'none',
+            'float':'none',
             overflow:'hidden',
             textAlign: 'left',
             color: config.color,
