@@ -10,7 +10,6 @@
         var config = {
           color: '#888',
           cls: 'placeholder',
-          lr_padding:4,
           selector: 'input[placeholder], textarea[placeholder]'
         };
         $.extend(config,opts);
@@ -26,9 +25,9 @@
         var ot = $(target).offset();
 
         return {
-          top: ot.top - op.top + ($(target).outerHeight() - $(target).height()) /2,
-          left: ot.left - op.left + config.lr_padding,
-          width: $(target).width() - config.lr_padding
+          top: ot.top - op.top,
+          left: ot.left - op.left,
+          width: $(target).width()
         };
       }
       return this.each(function() {
@@ -57,19 +56,22 @@
             color: config.color,
             cursor: 'text',
             paddingTop: $this.css('padding-top'),
+            paddingRight: $this.css('padding-right'),
+            paddingBottom: $this.css('padding-bottom'),
             paddingLeft: $this.css('padding-left'),
             fontSize: $this.css('font-size'),
             fontFamily: $this.css('font-family'),
             fontStyle: $this.css('font-style'),
             fontWeight: $this.css('font-weight'),
             textTransform: $this.css('text-transform'),
+            backgroundColor: 'transparent',
             zIndex: 99
           }, possible_line_height))
           .css(calcPositionCss(this))
           .attr('for', this.id)
           .data('target',$this)
           .click(function(){
-            $this.data('target').focus()
+            $(this).data('target').focus()
           })
           .insertBefore(this);
         $this
