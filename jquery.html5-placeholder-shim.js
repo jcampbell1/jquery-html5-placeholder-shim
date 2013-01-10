@@ -8,7 +8,7 @@
       },
       shim: function(opts) {
         var config = {
-          color: '#888',
+          color: '#AAA',
           cls: 'placeholder',
           selector: 'input[placeholder], textarea[placeholder]'
         };
@@ -77,8 +77,14 @@
         $this
           .data('placeholder',ol)
           .focus(function(){
-            ol.hide();
-          }).blur(function() {
+            ol[$this.val().length ? 'hide' : 'show']();
+          })
+          .keydown(function(){
+              setTimeout(function() {
+                 ol[$this.val().length ? 'hide' : 'show']();
+              }, 1);
+            })
+          .blur(function() {
             ol[$this.val().length ? 'hide' : 'show']();
           }).triggerHandler('blur');
         $(window)
