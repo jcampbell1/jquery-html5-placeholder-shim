@@ -6,14 +6,14 @@
           this._supported :
           ( this._supported = !!('placeholder' in $('<input type="text">')[0]) );
       },
+      defaults: {
+        color: '#888',
+        cls: 'placeholder',
+        selector: 'input[placeholder], textarea[placeholder]'
+      },
       shim: function(opts) {
-        var config = {
-          color: '#888',
-          cls: 'placeholder',
-          selector: 'input[placeholder], textarea[placeholder]'
-        };
-        $.extend(config,opts);
-        !this.browser_supported() && $(config.selector)._placeholder_shim(config);
+        opts = $.extend({},this.defaults,opts);
+        !this.browser_supported() && $(opts.selector)._placeholder_shim(opts);
       }
   }});
 
