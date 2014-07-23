@@ -91,7 +91,7 @@
   });
 })(jQuery);
 
-jQuery(document).add(window).bind('ready load', function() {
+jQuery(document).add(window).bind('ready load placeholder_shim', function() {
   if (jQuery.placeholder) {
     jQuery.placeholder.shim();
   }
