@@ -10,7 +10,8 @@
         var config = {
           color: '#888',
           cls: 'placeholder',
-          selector: 'input[placeholder], textarea[placeholder]'
+          selector: 'input[placeholder], textarea[placeholder]',
+		  align: 'left'
         };
         $.extend(config,opts);
         !this.browser_supported() && $(config.selector)._placeholder_shim(config);
@@ -52,7 +53,7 @@
             display: 'inline',
             'float':'none',
             overflow:'hidden',
-            textAlign: 'left',
+            textAlign: config.align,
             color: config.color,
             cursor: 'text',
             paddingTop: $this.css('padding-top'),
