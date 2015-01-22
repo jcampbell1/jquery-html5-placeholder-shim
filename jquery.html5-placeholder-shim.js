@@ -28,7 +28,7 @@
         return {
           top: ot.top - op.top,
           left: ot.left - op.left,
-          width: $(target).width()
+          width: $(target).outerWidth(true)
         };
       }
       return this.each(function() {
