@@ -33,6 +33,9 @@
       }
       return this.each(function() {
         var $this = $(this);
+        if (!$this.is(':visible')) {
+            return;
+        }
         
         if( $this.data('placeholder') ) {
           var $ol = $this.data('placeholder');
