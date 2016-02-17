@@ -84,7 +84,8 @@
             ol.hide();
           }).blur(function() {
             ol[$this.val().length ? 'hide' : 'show']();
-          }).triggerHandler('blur');
+          }).removeAttr('placeholder')
+            .triggerHandler('blur');
         $(window)
           .resize(function() {
             var $target = ol.data('target')
