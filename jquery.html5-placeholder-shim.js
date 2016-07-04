@@ -11,7 +11,7 @@
           color: '#888',
           cls: 'placeholder',
           selector: 'input[placeholder], textarea[placeholder]',
-		  align: 'left'
+	  align: 'left'
         };
         $.extend(config,opts);
         !this.browser_supported() && $(config.selector)._placeholder_shim(config);
@@ -45,7 +45,7 @@
 
         var possible_line_height = {};
         if( !$this.is('textarea') && $this.css('height') != 'auto') {
-          possible_line_height = { lineHeight: $this.css('height'), whiteSpace: 'nowrap' };
+          possible_line_height = { lineHeight: $this.height() + 'px', whiteSpace: 'nowrap' };
         }
 
         var ol = $('<label />')
